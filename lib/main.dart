@@ -1,13 +1,12 @@
-import 'package:eco_trace_app/login_signup/login_pge.dart';
-import 'package:eco_trace_app/splash_pge/splash_pge.dart';
+import 'package:empapp/splash/splash.dart';
+import 'package:empapp/features/authentication/logorsign.dart';
 import 'package:flutter/material.dart';
-
 
 void main() {
   runApp(const MyApp());
 }
 
-class  MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override

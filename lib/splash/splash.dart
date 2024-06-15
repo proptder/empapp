@@ -6,14 +6,14 @@ class SplashPge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: 
-        Stack(
+      body: Stack(
         children: [
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset("assets/splash_image/Splash 1.png",
-            fit: BoxFit.cover,
+            child: Image.asset(
+              "img/splash.png",
+              fit: BoxFit.cover,
             ),
           ),
           Container(
@@ -21,7 +21,10 @@ class SplashPge extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color.fromARGB(75, 0, 0, 0), Color.fromARGB(150, 0, 0, 0)],
+                colors: [
+                  Color.fromARGB(75, 0, 0, 0),
+                  Color.fromARGB(150, 0, 0, 0)
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
