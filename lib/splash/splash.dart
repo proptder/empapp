@@ -19,7 +19,7 @@ class SplashPge extends StatelessWidget {
           Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color.fromARGB(75, 0, 0, 0),

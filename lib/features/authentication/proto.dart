@@ -18,14 +18,14 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Carbon Footprint Tracker'),
+        title: const Text('Carbon Footprint Tracker'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('See your carbon footprint today !'),
-            SizedBox(height: 20),
+            const Text('See your carbon footprint today !'),
+            const SizedBox(height: 20),
             CircularPercentIndicator(
               radius: 150.0,
               lineWidth: 15.0,
@@ -34,7 +34,7 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
               center: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'CO\u2082',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -43,12 +43,12 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
                   ),
                   Text(
                     '${_carbonFootprint.toStringAsFixed(1)} kg',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 40.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Today',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -62,8 +62,8 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
               backgroundColor: Colors.redAccent,
               
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'Good job!',
               style: TextStyle(
                 fontSize: 24.0,
@@ -80,7 +80,7 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
             _carbonFootprint = (_carbonFootprint + 0.1) % 10;
           });
         },
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }

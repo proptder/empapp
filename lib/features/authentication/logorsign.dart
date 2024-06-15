@@ -16,7 +16,7 @@ class LoginPge extends StatelessWidget {
           Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color.fromARGB(193, 0, 0, 0),
@@ -45,12 +45,12 @@ class LoginPge extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 100.0,
                             ),
                             TextButton(
                               onPressed: () {},
-                              child: Text(
+                              child: const Text(
                                 'Log In',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 39, 78, 236),
@@ -60,7 +60,7 @@ class LoginPge extends StatelessWidget {
                             ),
                             TextButton(
                               onPressed: () {},
-                              child: Text(
+                              child: const Text(
                                 'Sign Up',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 39, 78, 236),
@@ -70,7 +70,7 @@ class LoginPge extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Wrap(
+                        const Wrap(
                           alignment: WrapAlignment.center,
                           spacing: 20.0,
                           children: [
@@ -79,7 +79,7 @@ class LoginPge extends StatelessWidget {
                               style: TextStyle(fontSize: 10),
                             ),
                             Text('Synergies', style: TextStyle(fontSize: 10)),
-                            Text("Nersk Software\'s",
+                            Text("Nersk Software's",
                                 style: TextStyle(fontSize: 10)),
                             Text('Tera IOT', style: TextStyle(fontSize: 10)),
                             SizedBox(
