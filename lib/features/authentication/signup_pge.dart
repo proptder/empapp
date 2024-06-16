@@ -1,5 +1,6 @@
-import 'package:empapp/features/authentication/logorsign.dart';
-import 'package:empapp/features/authentication/proto.dart';
+
+import 'package:empapp/features/authentication/login_pge.dart';
+import 'package:empapp/features/authentication/recovery_pge.dart';
 import 'package:flutter/material.dart';
 
 
@@ -24,7 +25,7 @@ class SignupPge extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                      builder: (context) => const StartPge(),
+                      builder: (context) => const RecoverPass(),
                       ),
                     ); // Handle back action
                     },
@@ -42,7 +43,7 @@ class SignupPge extends StatelessWidget {
               Spacer(flex: 2), 
               ],
             ),
-            SizedBox(height: 190),
+            SizedBox(height: 130),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: Text(
@@ -136,7 +137,7 @@ class SignupPge extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 140),
+            SizedBox(height: 100),
             Center(
               child: Container(
                 
@@ -170,12 +171,12 @@ class SignupPge extends StatelessWidget {
                   onTap: () {
                    Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                      builder: (context) => const CarbonFootprintScreen(),
+                      builder: (context) => const LoginPge(),
                       ),
                     ); // Handle sign up navigation
                   },
                   child: Text(
-                    'Login ?',
+                    'Login ',
                     style: TextStyle(fontSize: 26, color: Color(0xFF0F0159)),
                   ),
                 ),
