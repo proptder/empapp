@@ -1,3 +1,4 @@
+import 'package:empapp/features/authentication/signup_pge.dart';
 import 'package:flutter/material.dart';
 
 class LoginPge extends StatelessWidget {
@@ -49,9 +50,15 @@ class LoginPge extends StatelessWidget {
                               height: 100.0,
                             ),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => const SignupPge(),
+                                ),
+                              );
+                              },
                               child: const Text(
-                                'Log In',
+                          'Log In',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 39, 78, 236),
                                   fontSize: 18,
