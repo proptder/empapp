@@ -1,8 +1,8 @@
-import 'package:empapp/features/authentication/signup_pge.dart';
+import 'package:empapp/features/authentication/login_pge.dart';
 import 'package:flutter/material.dart';
 
-class LoginPge extends StatelessWidget {
-  const LoginPge({super.key});
+class StartPge extends StatelessWidget {
+  const StartPge({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,57 +43,64 @@ class LoginPge extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const SizedBox(
-                              height: 100.0,
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                  builder: (context) => const SignupPge(),
-                                ),
-                              );
-                              },
-                              child: const Text(
-                          'Log In',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 39, 78, 236),
-                                  fontSize: 18,
+                        Center(
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                height: 100.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 125),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) => const LoginPge(),
+                                    ),
+                                  );
+                                  },
+                                  child: const Text(
+                                  'Log In',
+                                    style: TextStyle(
+                                      color :Color(0xFF0F0159),
+                                      fontSize: 22,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 39, 78, 236),
-                                  fontSize: 18,
+                              TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    color :Color(0xFF0F0159),
+                                    fontSize: 22,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        const Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 20.0,
-                          children: [
-                            Text(
-                              '    Impact Africa',
-                              style: TextStyle(fontSize: 10),
-                            ),
-                            Text('Synergies', style: TextStyle(fontSize: 10)),
-                            Text("Nersk Software's",
-                                style: TextStyle(fontSize: 10)),
-                            Text('Tera IOT', style: TextStyle(fontSize: 10)),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Text('GreenSky', style: TextStyle(fontSize: 10)),
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const Wrap(
+                            alignment: WrapAlignment.center,
+                            spacing: 20.0,
+                            children: [
+                              Text(
+                                '    Impact Africa',
+                                style: TextStyle(fontSize: 10),
+                              ),
+                              Text('Synergies', style: TextStyle(fontSize: 10)),
+                              Text("Nersk Software's",
+                                  style: TextStyle(fontSize: 10)),
+                              Text('Tera IOT', style: TextStyle(fontSize: 10)),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Text('GreenSky', style: TextStyle(fontSize: 10)),
+                            ],
+                          ),
                         ),
                       ],
                     ),

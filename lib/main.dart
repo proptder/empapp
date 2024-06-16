@@ -1,5 +1,5 @@
-import 'package:empapp/splash/splash.dart';
 import 'package:empapp/features/authentication/logorsign.dart';
+import 'package:empapp/splash/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +26,7 @@ class SplashWrapper extends StatelessWidget {
     // Schedule the navigation after 5 seconds
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const LoginPge()),
+        MaterialPageRoute(builder: (context) => const StartPge()),
       );
     });
 

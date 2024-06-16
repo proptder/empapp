@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashPge extends StatelessWidget {
   const SplashPge({super.key});
@@ -29,7 +30,17 @@ class SplashPge extends StatelessWidget {
                 end: Alignment.bottomRight,
               ),
             ),
-          )
+          ),
+          Positioned(
+            left: 89,
+            top: 310,
+            child: Text("eco trace", 
+          style: GoogleFonts.righteous(
+            fontSize: 63.0, 
+            fontWeight: FontWeight.bold , 
+            color: Colors.white)
+             )
+            ),
         ],
       ),
     );
