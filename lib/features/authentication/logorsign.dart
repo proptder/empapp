@@ -81,9 +81,9 @@ class StartPge extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Wrap(
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Wrap(
                             alignment: WrapAlignment.center,
                             spacing: 20.0,
                             children: [
