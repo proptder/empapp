@@ -1,20 +1,22 @@
 import 'package:empapp/features/authentication/logorsign.dart';
-import 'package:empapp/features/authentication/signup_pge.dart';
+import 'package:empapp/features/authentication/signup.dart';
+import 'package:empapp/common/widgets/buttons/button.dart';
 import 'package:flutter/material.dart';
 
-class LoginPge extends StatelessWidget {
-  const LoginPge({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Row(
               children: [
                 Align(
@@ -22,35 +24,35 @@ class LoginPge extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                      builder: (context) => const StartPge(),
-                      ),
-                    ); // Handle back action
+                        MaterialPageRoute(
+                          builder: (context) => const StartPge(),
+                        ),
+                      ); // Handle back action
                     },
-                    child: Text(
+                    child: const Text(
                       'Back',
                       style: TextStyle(color: Colors.green, fontSize: 16),
                     ),
                   ),
                 ),
-                Spacer(),
-              Text(
-                '     Login',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-              ),
-              Spacer(flex: 2), 
+                const Spacer(),
+                const Text(
+                  '     Login',
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+                const Spacer(flex: 2),
               ],
             ),
-            SizedBox(height: 200),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            const SizedBox(height: 200),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
               child: Text(
                 'Name',
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: '   Username/Phone/Email',
@@ -58,16 +60,16 @@ class LoginPge extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
               child: Text(
                 'Password',
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: '   Active Email Address',
@@ -76,45 +78,41 @@ class LoginPge extends StatelessWidget {
                 obscureText: true,
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: GestureDetector(
                 onTap: () {
-                     // Handle back action
-                    },
-                child: Text(
+                  // Handle back action
+                },
+                child: const Text(
                   'Forgot Password ?',
                   style: TextStyle(fontSize: 14),
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Center(
-              child: Container(
-                
-                width: 270,
-                height: 51,
-                decoration: BoxDecoration(
-                  color :Color(0xFF0F0159),
-                  borderRadius: BorderRadius.circular(14.0)
-                ),
-                
-                child: Center(child: Text('Login', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),))),
+              child: AppButton(
+                onPressed: () {
+                  // navigate to login page
+                },
+                buttonText: 'Login',
+              ),
             ),
-            Spacer(),
-            Center(
+            const Spacer(),
+            const Center(
               child: Text(
                 '-sign in with-',
                 style: TextStyle(fontSize: 14),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: Image.asset('img/google_icon.png'), 
+                  icon: Image.asset('img/google_icon.png'),
                   onPressed: () {
                     // Handle Google sign-in
                   },
@@ -133,28 +131,30 @@ class LoginPge extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
-            Center(
+            const Spacer(),
+            const Center(
               child: Text(
                 'Dont have an Account ?',
-                style: TextStyle(fontSize: 16,),
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Center(
               child: GestureDetector(
-                  onTap: () {
-                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                      builder: (context) => const SignupPge(),
-                      ),
-                    ); // Handle sign up navigation
-                  },
-                  child: Text(
-                    'Sign Up ?',
-                    style: TextStyle(fontSize: 26, color: Color(0xFF0F0159)),
-                  ),
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const Signup(),
+                    ),
+                  ); // Handle sign up navigation
+                },
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(fontSize: 26, color: Color(0xFF0F0159)),
                 ),
+              ),
             ),
           ],
         ),

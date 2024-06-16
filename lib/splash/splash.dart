@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashPge extends StatelessWidget {
@@ -22,25 +23,16 @@ class SplashPge extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(75, 0, 0, 0),
-                  Color.fromARGB(150, 0, 0, 0)
-                ],
+                colors: [Color.fromARGB(75, 0, 0, 0), Color.fromARGB(150, 0, 0, 0)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
           ),
           Positioned(
-            left: 89,
-            top: 310,
-            child: Text("eco trace", 
-          style: GoogleFonts.righteous(
-            fontSize: 63.0, 
-            fontWeight: FontWeight.bold , 
-            color: Colors.white)
-             )
-            ),
+              left: 65,
+              top: 310,
+              child: Text("eco trace", style: GoogleFonts.righteous(fontSize: 63.0, fontWeight: FontWeight.bold, color: Colors.white))),
         ],
       ),
     );

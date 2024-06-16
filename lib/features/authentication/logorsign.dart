@@ -1,4 +1,5 @@
-import 'package:empapp/features/authentication/login_pge.dart';
+import 'package:empapp/features/authentication/login.dart';
+import 'package:empapp/features/authentication/signup.dart';
 import 'package:flutter/material.dart';
 
 class StartPge extends StatelessWidget {
@@ -19,10 +20,7 @@ class StartPge extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(193, 0, 0, 0),
-                  Color.fromARGB(150, 0, 0, 0)
-                ],
+                colors: [Color.fromARGB(193, 0, 0, 0), Color.fromARGB(150, 0, 0, 0)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -45,35 +43,39 @@ class StartPge extends StatelessWidget {
                       children: [
                         Center(
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const SizedBox(
                                 height: 100.0,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 125),
-                                child: TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pushReplacement(
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(
-                                      builder: (context) => const LoginPge(),
+                                      builder: (context) => const Login(),
                                     ),
                                   );
-                                  },
-                                  child: const Text(
+                                },
+                                child: const Text(
                                   'Log In',
-                                    style: TextStyle(
-                                      color :Color(0xFF0F0159),
-                                      fontSize: 22,
-                                    ),
+                                  style: TextStyle(
+                                    color: Color(0xFF0F0159),
+                                    fontSize: 22,
                                   ),
                                 ),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) => const Signup(),
+                                    ),
+                                  );
+                                },
                                 child: const Text(
                                   'Sign Up',
                                   style: TextStyle(
-                                    color :Color(0xFF0F0159),
+                                    color: Color(0xFF0F0159),
                                     fontSize: 22,
                                   ),
                                 ),
@@ -81,9 +83,9 @@ class StartPge extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Wrap(
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Wrap(
                             alignment: WrapAlignment.center,
                             spacing: 20.0,
                             children: [
@@ -92,11 +94,10 @@ class StartPge extends StatelessWidget {
                                 style: TextStyle(fontSize: 10),
                               ),
                               Text('Synergies', style: TextStyle(fontSize: 10)),
-                              Text("Nersk Software's",
-                                  style: TextStyle(fontSize: 10)),
+                              Text("Nersk Software's", style: TextStyle(fontSize: 10)),
                               Text('Tera IOT', style: TextStyle(fontSize: 10)),
                               SizedBox(
-                                width: 20,
+                                width: 10,
                               ),
                               Text('GreenSky', style: TextStyle(fontSize: 10)),
                             ],
