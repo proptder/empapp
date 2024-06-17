@@ -1,4 +1,5 @@
 import 'package:empapp/features/authentication/recovery_pge.dart';
+import 'package:empapp/features/authentication/reset.dart';
 import 'package:flutter/material.dart';
 
 class VerifyPge extends StatelessWidget {
@@ -76,7 +77,11 @@ class VerifyPge extends StatelessWidget {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  // 
+                  Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                        builder: (context) => const Reset(),
+                        ),
+                      ); // 
                 },
                 child: Container(
                   width: 270,
