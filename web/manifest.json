@@ -1,6 +1,6 @@
 {
-    "name": "eco_trace_app",
-    "short_name": "eco_trace_app",
+    "name": "empapp",
+    "short_name": "empapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

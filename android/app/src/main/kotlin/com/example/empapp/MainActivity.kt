@@ -1,4 +1,4 @@
-package com.example.eco_trace_app
+package com.example.empapp
 
 import io.flutter.embedding.android.FlutterActivity
 
