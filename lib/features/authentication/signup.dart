@@ -1,6 +1,7 @@
 import 'package:empapp/common/widgets/buttons/button.dart';
 import 'package:empapp/features/authentication/logorsign.dart';
 import 'package:empapp/features/authentication/proto.dart';
+import 'package:empapp/features/setup.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatelessWidget {
@@ -107,7 +108,11 @@ class Signup extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     onTap: () {
-                      // Handle log in navigation
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const Setup(),
+                        ),
+                      ); // Handle log in navigation
                     },
                     child: Container(
                       width: 350.0,
