@@ -1,6 +1,6 @@
-import 'package:empapp/features/managedevice/adddevscan.dart';
 import 'package:empapp/common/colors.dart';
 import 'package:empapp/common/widgets/buttons/button.dart';
+import 'package:empapp/features/managedevice/adddevscan.dart';
 import 'package:flutter/material.dart';
 
 class AddDeviceHome extends StatelessWidget {
@@ -9,10 +9,12 @@ class AddDeviceHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
+        child: 
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(

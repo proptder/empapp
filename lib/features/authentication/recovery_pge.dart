@@ -11,7 +11,8 @@ class RecoverPass extends StatelessWidget {
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      child: 
+      Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const SizedBox(
           height: 30,
         ),

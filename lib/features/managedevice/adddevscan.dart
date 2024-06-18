@@ -36,38 +36,39 @@ class _ScanState extends State<Scan> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 30),
-            Row(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(
-                      'Back',
-                      style: TextStyle(color: appGreen, fontSize: 16),
+        child: 
+        SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: appGreen, fontSize: 16),
+                      ),
                     ),
                   ),
-                ),
-                const Spacer(),
-                const Text(
-                  'Set Up',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                ),
-                const Spacer(flex: 2),
-              ],
-            ),
-            const SizedBox(height: 70),
-            Expanded(
-              child: Center(
+                  const Spacer(),
+                  const Text(
+                    'Set Up',
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  ),
+                  const Spacer(flex: 2),
+                ],
+              ),
+              const SizedBox(height: 50),
+              Center(
                 child: Container(
                   height: 600,
-                  width: 300,
+                  width: 800,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -84,24 +85,24 @@ class _ScanState extends State<Scan> {
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: Text(
-                qrText ?? 'Scan code',
-                style: TextStyle(color: appGreen, fontSize: 16),
+              const SizedBox(height: 20),
+              Center(
+                child: Text(
+                  qrText ?? 'Scan code',
+                  style: TextStyle(color: appGreen, fontSize: 16),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: AppButton(
-                onPressed: () {
-                  // Navigate to the login page or perform other actions
-                },
-                buttonText: 'OK',
+              const SizedBox(height: 20),
+              Center(
+                child: AppButton(
+                  onPressed: () {
+                    // Navigate to the login page or perform other actions
+                  },
+                  buttonText: 'OK',
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
