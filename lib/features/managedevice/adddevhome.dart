@@ -1,5 +1,6 @@
 import 'package:empapp/common/colors.dart';
 import 'package:empapp/common/widgets/buttons/button.dart';
+import 'package:empapp/features/authentication/signup.dart';
 import 'package:empapp/features/managedevice/adddevscan.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class AddDeviceHome extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       // go back to the previous page using pop
-                      Navigator.pop(context);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Signup()));
                     },
                     child: Text(
                       'Back',

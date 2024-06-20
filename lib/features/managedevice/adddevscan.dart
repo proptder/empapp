@@ -1,5 +1,6 @@
 import 'package:empapp/common/colors.dart';
 import 'package:empapp/common/widgets/buttons/button.dart';
+import 'package:empapp/features/managedevice/adddevloading.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -96,7 +97,10 @@ class _ScanState extends State<Scan> {
               Center(
                 child: AppButton(
                   onPressed: () {
-                    // Navigate to the login page or perform other actions
+                    Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SetupScreen()),
+            );// Navigate to the login page or perform other actions
                   },
                   buttonText: 'OK',
                 ),
