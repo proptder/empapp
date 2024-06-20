@@ -144,7 +144,7 @@ class HostMachine extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarbonFootprintScreen(),
+                          builder: (context) => EcoTraceScreen(),
                         ),
                       );// navigate to login page
                     },
