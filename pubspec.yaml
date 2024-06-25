@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   percent_indicator: ^4.0.1
+  sleek_circular_slider: ^2.0.1
   qr_code_scanner: ^1.0.0
 
 
@@ -39,6 +40,8 @@ dependencies:
   cupertino_icons: ^1.0.6
 
   google_fonts: any
+  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

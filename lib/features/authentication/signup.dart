@@ -169,7 +169,7 @@ class Signup extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) =>  EcoTraceScreen(),
+                          builder: (context) =>  const EcoTraceScreen(),
                         ),
                       ); // Handle sign up navigation
                     },

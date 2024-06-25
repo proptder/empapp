@@ -46,8 +46,8 @@ class HostMachine extends StatelessWidget {
               const Spacer(flex: 2),
             ],
           ),
-          SizedBox(height: 120,),
-          Padding(
+          const SizedBox(height: 120,),
+          const Padding(
                     padding: EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Text(
                       'Search',
@@ -63,8 +63,8 @@ class HostMachine extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
-                  Text("     Select Machine"),
+                  const SizedBox(height: 20,),
+                  const Text("     Select Machine"),
                   const SizedBox(height: 20),
                   Center(
                     child: 
@@ -102,7 +102,7 @@ class HostMachine extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Text("     Select type"),
+                  const Text("     Select type"),
                   const SizedBox(height: 20),
                   Center(
                     child: GestureDetector(
@@ -144,7 +144,7 @@ class HostMachine extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => EcoTraceScreen(),
+                          builder: (context) => const EcoTraceScreen(),
                         ),
                       );// navigate to login page
                     },

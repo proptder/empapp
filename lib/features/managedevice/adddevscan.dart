@@ -99,7 +99,7 @@ class _ScanState extends State<Scan> {
                   onPressed: () {
                     Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SetupScreen()),
+              MaterialPageRoute(builder: (context) => const SetupScreen()),
             );// Navigate to the login page or perform other actions
                   },
                   buttonText: 'OK',
