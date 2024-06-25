@@ -6,6 +6,8 @@ import 'package:empapp/features/managedevice/addevhostmachine.dart';
 import 'package:flutter/material.dart';
 
 class SetupScreen extends StatefulWidget {
+  const SetupScreen({super.key});
+
   @override
   _SetupScreenState createState() => _SetupScreenState();
 }
@@ -20,7 +22,7 @@ class _SetupScreenState extends State<SetupScreen> {
   }
 
   void _startLoading() {
-    Timer.periodic(Duration(milliseconds: 100), (timer) {
+    Timer.periodic(const Duration(milliseconds: 100), (timer) {
       setState(() {
         progress += 0.01;
         if (progress >= 1.0) {
@@ -38,20 +40,20 @@ class _SetupScreenState extends State<SetupScreen> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children:[
-              Icon(Icons.check_circle, color: Colors.green, size: 50),
-              SizedBox(height: 20),
-              Text(
+              const Icon(Icons.check_circle, color: Colors.green, size: 50),
+              const SizedBox(height: 20),
+              const Text(
                 'Carbon EX 500\nconnected.',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Center(
                     child: AppButton(
                       onPressed: () {
@@ -105,26 +107,26 @@ class _SetupScreenState extends State<SetupScreen> {
                 const Spacer(flex: 2),
               ],
             ),
-            SizedBox(height: 280),
+            const SizedBox(height: 280),
             Text(
               '${(progress * 100).toStringAsFixed(0)}% Completed...',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             LinearProgressIndicator(
               value: progress,
               backgroundColor: Colors.grey[300],
-              valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 112, 224, 0)),
+              valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 112, 224, 0)),
             ),
-            SizedBox(height: 20),
-            Icon(Icons.nfc_outlined, size: 50),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 20),
+            const Icon(Icons.nfc_outlined, size: 50),
+            const SizedBox(height: 10),
+            const Text(
               'Connecting via NFC',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Hold your phone near to the device, using NFC phone will automatically connect to the device.',
               style: TextStyle(fontSize: 12, color: Colors.grey),
               textAlign: TextAlign.center,

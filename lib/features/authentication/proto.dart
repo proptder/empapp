@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class EcoTraceScreen extends StatefulWidget {
+  const EcoTraceScreen({super.key});
+
   @override
   _EcoTraceScreenState createState() => _EcoTraceScreenState();
 }
@@ -9,161 +11,72 @@ class EcoTraceScreen extends StatefulWidget {
 class _EcoTraceScreenState extends State<EcoTraceScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 23, 0, 75),
-        elevation: 0,
-        title: Text(
-          'Eco Trace',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings, color: Colors.white),
-            onPressed: () {
-              // Handle settings button
-            },
-          ),
-        ],
+    final customWidth = CustomSliderWidths(
+      trackWidth: 10,
+      progressBarWidth: 13,
+      shadowWidth: 20,
+    );
+
+    final customColors = CustomSliderColors(
+      trackColor: Colors.grey,
+      progressBarColors: [const Color.fromARGB(255, 179, 78, 78), Colors.cyan],
+      shadowColor: Colors.black,
+      shadowMaxOpacity: 0.2,
+      shadowStep: 10,
+    );
+
+    final info = InfoProperties(
+      topLabelText: 'CO₂',
+      topLabelStyle: const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      bottomLabelText: 'Today',
+      bottomLabelStyle: const TextStyle(
+        fontSize: 20,
+        color: Colors.green,
+      ),
+    );
+
+    final customAppearance = CircularSliderAppearance(
+      customWidths: customWidth,
+      customColors: customColors,
+      infoProperties: info,
+      startAngle: 270,
+      angleRange: 360,
+      size: 200,
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('EcoTraceScreen'),
+      ),
+      body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Hello Grace!',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green,
-                  ),
-                ),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/images/profile.jpg'),
-                ),
-              ],
+            SleekCircularSlider(
+              appearance: customAppearance,
+              initialValue: 30,
+              min: 0,
+              max: 100,
+              onChange: (double value) {
+                // Callback providing a value while it's being changed (with a pan gesture)
+              },
+              onChangeEnd: (double value) {
+                // Callback providing a value when the user ends the change with a pan gesture
+              },
             ),
-            SizedBox(height: 5),
-            Text(
-              'See your carbon footprint today!',
-              style: TextStyle(fontSize: 16, color: Colors.black54),
-            ),
-            SizedBox(height: 20),
-            Center(
-              child: CircularPercentIndicator(
-                radius: 150.0,
-                lineWidth: 15.0,
-                percent: 0.3,
-                center: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'CO₂',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(
-                      '0.3kg',
-                      style: TextStyle(
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text(
-                      'Today',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(
-                      'Good Job!',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ],
-                ),
-                progressColor: Colors.green,
-                backgroundColor: Colors.grey,
-                circularStrokeCap: CircularStrokeCap.round,
-                footer: Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Handle view details button
-                    },
-                    child: Text('View Details'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 23, 0, 75),
-                      textStyle: TextStyle(fontSize: 18),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 30),
-            Expanded(
-              child: ListView(
-                children: [
-                  _buildGasLevelTile('CO₂ level', '400 ppm', 'captured 1m ago'),
-                  _buildGasLevelTile('Gas 2', '23.5 Kg', 'captured 1m ago'),
-                  _buildGasLevelTile('Gas 3', '30 Kg', 'captured 1m ago'),
-                ],
+            const Padding(
+              padding: EdgeInsets.only(top: 16.0),
+              child: Text(
+                'Good Job!',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
               ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Color.fromARGB(255, 23, 0, 75),
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-      ),
-    );
-  }
-
-  ListTile _buildGasLevelTile(String title, String subtitle, String trailing) {
-    return ListTile(
-      leading: Icon(Icons.cloud, size: 40, color: Colors.black54),
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      ),
-      subtitle: Text(subtitle),
-      trailing: Text(trailing),
     );
   }
 }
