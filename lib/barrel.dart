@@ -10,7 +10,14 @@ export 'package:empapp/features/managedevice/adddevloading.dart';
 export 'package:qr_code_scanner/qr_code_scanner.dart';
 export 'dart:async';
 export 'package:empapp/features/managedevice/addevhostmachine.dart';
+
 export 'package:empapp/features/dashboard/dashboard.dart';
+export 'package:empapp/features/dashboard/dashdetail.dart';
+export 'package:empapp/features/dashboard/widgets/devicebox.dart';
+export 'package:empapp/features/dashboard/widgets/gasbar.dart';
+export 'package:empapp/features/dashboard/widgets/tips.dart';
+
+
 export 'package:sleek_circular_slider/sleek_circular_slider.dart';
 export 'package:empapp/features/authentication/login.dart';
 export 'package:empapp/features/managedevice/adddevhome.dart';

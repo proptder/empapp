@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class SmallAppButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -11,12 +11,17 @@ class SmallAppButton extends StatelessWidget {
     return TextButton(
       style: TextButton.styleFrom(
         backgroundColor: const Color(0xFF0F0159),
-        minimumSize: const Size(60, 20),
+        minimumSize: const Size(60, 30),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(6.0),
         ),
       ),
-      onPressed: onPressed,
+        onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Details()),
+        );
+      },
       child: Text(
         buttonText,
         style: const TextStyle(

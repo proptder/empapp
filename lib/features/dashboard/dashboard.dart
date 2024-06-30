@@ -18,7 +18,8 @@ class _DashboardState extends State<Dashboard> {
 
     // Example: Navigate to a different page based on index
     if (index == 2) {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SettingsPage()));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => SettingsPage()));
     }
   }
 
@@ -91,116 +92,192 @@ class _DashboardState extends State<Dashboard> {
         ),
       ),
       body: Container(
-         decoration:  BoxDecoration(
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              mainCol, // Starting color
+              Colors.white, // Ending color
+            ],
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
           ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          'Hello ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25.0),
+                        ),
+                        Text(
+                          'Grace',
+                          style: TextStyle(
+                              color: appGreen,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0),
+                        ),
+                      ],
+                    ),
+                    Image.asset(
+                      "assets/icons/user.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0),
+                  child: Text(
+                    'See your carbon footprint for today!',
+                    style: TextStyle(fontWeight: FontWeight.w200, fontSize: 14.0),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Hello ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 25.0),
+                      SleekCircularSlider(
+                        appearance: customAppearance,
+                        initialValue: 30,
+                        min: 0,
+                        max: 100,
+                        onChange: (double value) {
+                          // Callback providing a value while it's being changed (with a pan gesture)
+                        },
+                        onChangeEnd: (double value) {
+                          // Callback providing a value when the user ends the change with a pan gesture
+                        },
                       ),
-                      Text(
-                        'Grace',
-                        style: TextStyle(
-                            color: appGreen,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 16.0),
+                        child: Text(
+                          'Good Job!',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        ),
                       ),
                     ],
                   ),
-                  Image.asset(
-                    "assets/icons/user.png",
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 5.0),
-                child: Text(
-                  'See your carbon footprint for today!',
-                  style: TextStyle(fontWeight: FontWeight.w200, fontSize: 14.0),
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    SleekCircularSlider(
-                      appearance: customAppearance,
-                      initialValue: 30,
-                      min: 0,
-                      max: 100,
-                      onChange: (double value) {
-                        // Callback providing a value while it's being changed (with a pan gesture)
-                      },
-                      onChangeEnd: (double value) {
-                        // Callback providing a value when the user ends the change with a pan gesture
-                      },
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 16.0),
-                      child: Text(
-                        'Good Job!',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20.0),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40.0),
+                      child: SmallAppButton(
+                        onPressed: () {
+                          // navigate to login page
+                        },
+                        buttonText: 'View Details',
                       ),
                     ),
                   ],
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right:40.0),
-                    child: SmallAppButton(
-                      onPressed: () {
-                        // navigate to login page
-                      },
-                      buttonText: 'View Details',
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 600)
-            ],
+                
+                const Column(
+                  children: [
+                     SizedBox(height: 60),
+                     GasBar(gas:"CO₂", time:"2 minutes ago", weight:"23.5kg" ),
+                      SizedBox(height: 20),
+                     GasBar(gas:"NOx", time:"2 minutes ago", weight:"15.3kg" ),
+                      SizedBox(height: 20),
+                     GasBar(gas:"SO₂", time:"2 minutes ago", weight:"2.8kg" ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                const DeviceBox(),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left:20.0),
+                  child: Row(
+                        children: [
+                          const Text(
+                            'Tips for ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25.0),
+                          ),
+                          Text(
+                            'Sustainability',
+                            style: TextStyle(
+                                color: appGreen,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25.0),
+                          ),
+                        ],
+                      ),
+                ),
+                const SizedBox(height: 20),
+                const TipsBox(
+                  heading:"Green Route",
+                  tip:"Leave your car behind and take a greener route, walking, biking or public transport. Reduce emissions, save money, and stay fit on the go."),
+                const TipsBox(
+                  heading:"Reduce, Reuse, Recycle",
+                  tip:"A simple mantra that encourages us to be mindful of our consumption habits and minimize waste by finding new uses for existing items"),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left:20.0),
+                  child: Row(
+                        children: [
+                          const Text(
+                            'Ads For ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25.0),
+                          ),
+                          Text(
+                            'You',
+                            style: TextStyle(
+                                color: appGreen,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25.0),
+                          ),
+                        ],
+                      ),
+                ),
+                const SizedBox(height: 20),
+                Image.asset(
+              "assets/img/ad.png",
+            ),
+              ],
+            ),
           ),
         ),
       ),
-       bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        backgroundColor: Colors.white, // Set your desired background color
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
- 
+            icon: Icon(Icons.home_work),
+            label: '', // Remove label text
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.device_hub),
-            label: 'Devices',
+            icon: Icon(Icons.device_hub,),
+            label: '', // Remove label text
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notification',
+            icon: Icon(Icons.notifications,),
+            label: '', // Remove label text
           ),
         ],
       ),
