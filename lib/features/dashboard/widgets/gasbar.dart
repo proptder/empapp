@@ -19,22 +19,20 @@ class _GasBarState extends State<GasBar> {
       padding: const EdgeInsets.all(15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
             width: 50,
             height: 50,
-            child: Image.asset(
-              "assets/icons/co2.png",
-            ),
+            child: const Iconify(Iwwa.co2),
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: appGrey, width: 2)),
+              border: Border(bottom: BorderSide(color: appGrey, width: 1)),
             ),
-            width: 300,
-            height: 75,
+            width: 260,
+            height: 60,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,7 +43,7 @@ class _GasBarState extends State<GasBar> {
                       widget.gas,
                       style: const TextStyle(
                         color: Colors.black,
-                        fontSize: 24,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -54,7 +52,7 @@ class _GasBarState extends State<GasBar> {
                       style: TextStyle(
                         color: textGrey,
                         fontSize: 14,
-                        fontWeight: FontWeight.normal,
+                        fontWeight: FontWeight.w100,
                       ),
                     ),
                   ],

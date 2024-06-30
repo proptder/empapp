@@ -16,10 +16,22 @@ class _DashboardState extends State<Dashboard> {
       _selectedIndex = index;
     });
 
-    // Example: Navigate to a different page based on index
-    if (index == 2) {
+    if (index == 1) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => SettingsPage()));
+          .push(MaterialPageRoute(builder: (context) => const AddDeviceHome()))
+          .then((_) {
+        setState(() {
+          _selectedIndex = 0;
+        });
+      });
+    } else if (index == 2) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => SettingsPage()))
+          .then((_) {
+        setState(() {
+          _selectedIndex = 0;
+        });
+      });
     }
   }
 
@@ -146,7 +158,8 @@ class _DashboardState extends State<Dashboard> {
                   padding: EdgeInsets.only(top: 5.0),
                   child: Text(
                     'See your carbon footprint for today!',
-                    style: TextStyle(fontWeight: FontWeight.w200, fontSize: 14.0),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w200, fontSize: 14.0),
                   ),
                 ),
                 const SizedBox(
@@ -193,70 +206,80 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ],
                 ),
-                
                 const Column(
                   children: [
-                     SizedBox(height: 60),
-                     GasBar(gas:"CO₂", time:"2 minutes ago", weight:"23.5kg" ),
-                      SizedBox(height: 20),
-                     GasBar(gas:"NOx", time:"2 minutes ago", weight:"15.3kg" ),
-                      SizedBox(height: 20),
-                     GasBar(gas:"SO₂", time:"2 minutes ago", weight:"2.8kg" ),
+                    SizedBox(height: 60),
+                    GasBar(
+                        gas: "CO₂",
+                        time: "captured 2 minutes ago",
+                        weight: "23.5kg"),
+                    SizedBox(height: 20),
+                    GasBar(
+                        gas: "NOx",
+                        time: "captured 2 minutes ago",
+                        weight: "15.3kg"),
+                    SizedBox(height: 20),
+                    GasBar(
+                        gas: "SO₂",
+                        time: "captured 2 minutes ago",
+                        weight: "2.8kg"),
                   ],
                 ),
                 const SizedBox(height: 20),
                 const DeviceBox(),
                 const SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.only(left:20.0),
+                  padding: const EdgeInsets.only(left: 20.0),
                   child: Row(
-                        children: [
-                          const Text(
-                            'Tips for ',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25.0),
-                          ),
-                          Text(
-                            'Sustainability',
-                            style: TextStyle(
-                                color: appGreen,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25.0),
-                          ),
-                        ],
+                    children: [
+                      const Text(
+                        'Tips for ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 25.0),
                       ),
+                      Text(
+                        'Sustainability',
+                        style: TextStyle(
+                            color: appGreen,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
                 const TipsBox(
-                  heading:"Green Route",
-                  tip:"Leave your car behind and take a greener route, walking, biking or public transport. Reduce emissions, save money, and stay fit on the go."),
+                    heading: "Green Route",
+                    tip:
+                        "Leave your car behind and take a greener route, walking, biking or public transport. Reduce emissions, save money, and stay fit on the go."),
                 const TipsBox(
-                  heading:"Reduce, Reuse, Recycle",
-                  tip:"A simple mantra that encourages us to be mindful of our consumption habits and minimize waste by finding new uses for existing items"),
+                    heading: "Reduce, Reuse, Recycle",
+                    tip:
+                        "A simple mantra that encourages us to be mindful of our consumption habits and minimize waste by finding new uses for existing items"),
                 const SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.only(left:20.0),
+                  padding: const EdgeInsets.only(left: 20.0),
                   child: Row(
-                        children: [
-                          const Text(
-                            'Ads For ',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25.0),
-                          ),
-                          Text(
-                            'You',
-                            style: TextStyle(
-                                color: appGreen,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25.0),
-                          ),
-                        ],
+                    children: [
+                      const Text(
+                        'Ads For ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 25.0),
                       ),
+                      Text(
+                        'You',
+                        style: TextStyle(
+                            color: appGreen,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Image.asset(
-              "assets/img/ad.png",
-            ),
+                  "assets/img/ad.png",
+                ),
               ],
             ),
           ),
@@ -268,16 +291,16 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Colors.white, // Set your desired background color
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_work),
-            label: '', // Remove label text
+            icon: Iconify(MaterialSymbols.home_rounded),
+            label: 'Home', // Remove label text
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.device_hub,),
-            label: '', // Remove label text
+            icon: Iconify(MaterialSymbols.devices_other), // widget
+            label: 'Devices', // Remove label text
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications,),
-            label: '', // Remove label text
+            icon: Iconify(Cil.bell),
+            label: 'Notifications', // Remove label text
           ),
         ],
       ),

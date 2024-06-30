@@ -23,7 +23,10 @@ export 'package:empapp/features/authentication/login.dart';
 export 'package:empapp/features/managedevice/adddevhome.dart';
 export 'package:empapp/features/authentication/recovery_pge.dart';
 
-
+export 'package:iconify_flutter/iconify_flutter.dart'; 
+export 'package:iconify_flutter/icons/cil.dart';
+export 'package:iconify_flutter/icons/material_symbols.dart';
+export 'package:iconify_flutter/icons/iwwa.dart';
 
 
 

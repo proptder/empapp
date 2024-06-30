@@ -29,7 +29,7 @@ class _TipsBoxState extends State<TipsBox> {
             ),
           ),
           SizedBox(
-            width: 230,
+            width: 190,
             height: 120,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -8,20 +8,6 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    // Handle navigation based on index
-    setState(() {
-      _selectedIndex = index;
-    });
-
-    // Example: Navigate to a different page based on index
-    if (index == 2) {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => SettingsPage()));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,29 +174,6 @@ class _DetailsState extends State<Details> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        backgroundColor: Colors.white, // Set your desired background color
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_work),
-            label: '', // Remove label text
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.device_hub,
-            ),
-            label: '', // Remove label text
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.notifications,
-            ),
-            label: '', // Remove label text
-          ),
-        ],
       ),
     );
   }
