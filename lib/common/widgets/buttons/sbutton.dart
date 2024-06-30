@@ -19,7 +19,7 @@ class SmallAppButton extends StatelessWidget {
         onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Details()),
+          MaterialPageRoute(builder: (context) => const Details()),
         );
       },
       child: Text(

@@ -26,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
       });
     } else if (index == 2) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => SettingsPage()))
+          .push(MaterialPageRoute(builder: (context) => const SettingsPage()))
           .then((_) {
         setState(() {
           _selectedIndex = 0;
@@ -309,14 +309,16 @@ class _DashboardState extends State<Dashboard> {
 }
 
 class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      body: Center(
-        child: const Text('Settings Page'),
+      body: const Center(
+        child: Text('Settings Page'),
       ),
     );
   }
