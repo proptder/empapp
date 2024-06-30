@@ -1,8 +1,4 @@
-import 'package:empapp/common/colors.dart';
-import 'package:empapp/common/widgets/buttons/button.dart';
-import 'package:empapp/features/managedevice/adddevloading.dart';
-import 'package:flutter/material.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:empapp/barrel.dart';
 
 class Scan extends StatefulWidget {
   const Scan({super.key});
@@ -37,8 +33,7 @@ class _ScanState extends State<Scan> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: 
-        SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -68,8 +63,8 @@ class _ScanState extends State<Scan> {
               const SizedBox(height: 50),
               Center(
                 child: Container(
-                  height: 600,
-                  width: 800,
+                  height: 400,
+                  width: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -97,10 +92,15 @@ class _ScanState extends State<Scan> {
               Center(
                 child: AppButton(
                   onPressed: () {
-                    Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SetupScreen()),
-            );// Navigate to the login page or perform other actions
+                    dispose();
+                    controller?.pauseCamera();
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoadScreen()),
+                    ).then((_) {
+                      controller?.resumeCamera();
+                    });
                   },
                   buttonText: 'OK',
                 ),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 // ignore: depend_on_referenced_packages
 
 class SplashPge extends StatelessWidget {
@@ -29,7 +29,7 @@ class SplashPge extends StatelessWidget {
             ),
           ),
           const Positioned(
-              left: 65, top: 310, child: Text("eco trace", style: TextStyle(fontSize: 63.0, fontWeight: FontWeight.bold, color: Colors.white))),
+              left: 40, top: 310, child: Text("emission pulse", style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold, color: Colors.white))),
         ],
       ),
     );

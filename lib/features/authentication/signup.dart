@@ -1,8 +1,4 @@
-import 'package:empapp/common/widgets/buttons/button.dart';
-import 'package:empapp/features/authentication/logorsign.dart';
-import 'package:empapp/features/authentication/proto.dart';
-import 'package:empapp/features/managedevice/adddevhome.dart';
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -169,7 +165,7 @@ class Signup extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) =>  const EcoTraceScreen(),
+                          builder: (context) =>  const Login(),
                         ),
                       ); // Handle sign up navigation
                     },

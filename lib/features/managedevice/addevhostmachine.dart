@@ -1,7 +1,4 @@
-import 'package:empapp/common/widgets/buttons/button.dart';
-import 'package:empapp/features/authentication/proto.dart';
-import 'package:empapp/features/managedevice/adddevscan.dart';
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class HostMachine extends StatelessWidget {
   const HostMachine({super.key});
@@ -142,9 +139,9 @@ class HostMachine extends StatelessWidget {
                 Center(
                   child: AppButton(
                     onPressed: () {
-                      Navigator.of(context).push(
+                      Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => const EcoTraceScreen(),
+                          builder: (context) => const Dashboard(),
                         ),
                       );// navigate to login page
                     },

@@ -1,7 +1,4 @@
-import 'package:empapp/features/authentication/logorsign.dart';
-import 'package:empapp/splash/splash.dart';
-import 'package:flutter/material.dart';
-
+import 'package:empapp/barrel.dart';
 void main() {
   runApp(const MyApp());
 }

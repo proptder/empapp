@@ -1,8 +1,4 @@
-import 'package:empapp/common/colors.dart';
-import 'package:empapp/common/widgets/buttons/button.dart';
-import 'package:empapp/features/authentication/signup.dart';
-import 'package:empapp/features/managedevice/adddevscan.dart';
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class AddDeviceHome extends StatelessWidget {
   const AddDeviceHome({super.key});

@@ -1,7 +1,4 @@
-import 'package:empapp/features/authentication/logorsign.dart';
-import 'package:empapp/features/authentication/recovery_pge.dart';
-import 'package:empapp/features/authentication/signup.dart';
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -13,8 +10,7 @@ class Login extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: 
-        Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
@@ -102,16 +98,21 @@ class Login extends StatelessWidget {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  //
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => const Dashboard()),
+                  );
                 },
                 child: Container(
                     width: 270,
                     height: 51,
-                    decoration: BoxDecoration(color: const Color(0xFF0F0159), borderRadius: BorderRadius.circular(14.0)),
+                    decoration: BoxDecoration(
+                        color: const Color(0xFF0F0159),
+                        borderRadius: BorderRadius.circular(14.0)),
                     child: const Center(
                         child: Text(
                       'Login',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ))),
               ),
             ),
