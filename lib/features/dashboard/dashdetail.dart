@@ -105,7 +105,9 @@ class _DetailsState extends State<Details> {
             ),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
                 color: Colors.white,
               ),
               child: SingleChildScrollView(
