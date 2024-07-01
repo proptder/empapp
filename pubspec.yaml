@@ -42,7 +42,16 @@ dependencies:
 
   google_fonts: any
   iconify_flutter: ^0.0.5
-  
+
+  firebase: ^9.0.3
+  firebase_core: ^2.32.0
+  firebase_storage: ^11.7.5
+  firebase_auth: ^4.16.0
+  cached_network_image: ^3.2.0 
+  shared_preferences: ^2.0.10
+  google_sign_in: ^6.2.1
+  cloud_firestore: ^4.14.0
+
 
 dev_dependencies:
   flutter_test:
