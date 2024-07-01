@@ -36,6 +36,9 @@ export 'package:empapp/features/managedevice/mngtdev/mngdevhome.dart';
 export 'package:empapp/features/managedevice/mngtdev/devices.dart';
 export 'package:empapp/features/managedevice/mngtdev/device.dart';
 
+export 'package:empapp/features/notifications/notifications.dart';
+export 'package:empapp/features/notifications/notifbar.dart';
+
 
 
 

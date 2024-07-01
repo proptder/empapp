@@ -39,19 +39,27 @@ class _MngDevHomeState extends State<MngDevHome> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 10,
+              height: 40,
             ),
-            const Text(
-              'Devices',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.w300,
+            const Padding(
+              padding:  EdgeInsets.only(left:20.0),
+              child: Text(
+                'Devices',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w300,
+                ),
               ),
             ),
+            const SizedBox(
+              height: 60,
+            ),
             Container(
+              width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -61,7 +69,7 @@ class _MngDevHomeState extends State<MngDevHome> {
                   child: Wrap(
                 alignment: WrapAlignment.center, children: [
                 const SizedBox(
-                  width: 200,
+                  width: 300,
                   height: 20,
                 ),
                 const DeviceBoxSmall(),

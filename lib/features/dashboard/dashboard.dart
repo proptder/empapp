@@ -26,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
       });
     } else if (index == 2) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const SettingsPage()))
+          .push(MaterialPageRoute(builder: (context) => const Notifications()))
           .then((_) {
         setState(() {
           _selectedIndex = 0;
@@ -303,22 +303,6 @@ class _DashboardState extends State<Dashboard> {
             label: 'Notifications', // Remove label text
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
-      ),
-      body: const Center(
-        child: Text('Settings Page'),
       ),
     );
   }
