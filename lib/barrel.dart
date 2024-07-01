@@ -16,6 +16,9 @@ export 'package:empapp/features/dashboard/dashdetail.dart';
 export 'package:empapp/features/dashboard/widgets/devicebox.dart';
 export 'package:empapp/features/dashboard/widgets/gasbar.dart';
 export 'package:empapp/features/dashboard/widgets/tips.dart';
+export 'package:empapp/features/dashboard/widgets/barchart.dart';
+export 'package:empapp/features/dashboard/widgets/stats.dart';
+
 
 
 export 'package:sleek_circular_slider/sleek_circular_slider.dart';
@@ -28,6 +31,10 @@ export 'package:iconify_flutter/icons/cil.dart';
 export 'package:iconify_flutter/icons/material_symbols.dart';
 export 'package:iconify_flutter/icons/iwwa.dart';
 
+
+export 'package:empapp/features/managedevice/mngtdev/mngdevhome.dart';
+export 'package:empapp/features/managedevice/mngtdev/devices.dart';
+export 'package:empapp/features/managedevice/mngtdev/device.dart';
 
 
 

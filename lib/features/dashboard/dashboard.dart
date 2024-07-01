@@ -18,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
 
     if (index == 1) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const AddDeviceHome()))
+          .push(MaterialPageRoute(builder: (context) => const MngDevHome()))
           .then((_) {
         setState(() {
           _selectedIndex = 0;
@@ -159,7 +159,7 @@ class _DashboardState extends State<Dashboard> {
                   child: Text(
                     'See your carbon footprint for today!',
                     style:
-                        TextStyle(fontWeight: FontWeight.w200, fontSize: 14.0),
+                        TextStyle(fontWeight: FontWeight.w300, fontSize: 14.0),
                   ),
                 ),
                 const SizedBox(

@@ -8,7 +8,6 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
-
   @override
   Widget build(BuildContext context) {
     final customWidth = CustomSliderWidths(
@@ -69,8 +68,7 @@ class _DetailsState extends State<Details> {
                 Icons.settings,
                 color: Colors.white,
               ),
-              onPressed: () {
-              },
+              onPressed: () {},
             ),
           ],
         ),
@@ -99,8 +97,8 @@ class _DetailsState extends State<Details> {
                 'You have done a great job with keeping your footprint low',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w100,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -121,7 +119,7 @@ class _DetailsState extends State<Details> {
                       child: Text(
                         'See your carbon footprint for today!',
                         style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 14.0),
+                            fontWeight: FontWeight.w400, fontSize: 14.0),
                       ),
                     ),
                     const SizedBox(
@@ -154,20 +152,74 @@ class _DetailsState extends State<Details> {
                         ],
                       ),
                     ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const BarChat(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            'Test ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25.0),
+                          ),
+                          Text(
+                            'Details',
+                            style: TextStyle(
+                                color: appGreen,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     const Column(
                       children: [
-                        SizedBox(height: 60),
                         GasBar(
-                            gas: "CO₂", time: "2 minutes ago", weight: "23.5kg"),
+                            gas: "CO₂",
+                            time: "2 minutes ago",
+                            weight: "23.5kg"),
                         SizedBox(height: 20),
                         GasBar(
-                            gas: "NOx", time: "2 minutes ago", weight: "15.3kg"),
+                            gas: "NOx",
+                            time: "2 minutes ago",
+                            weight: "15.3kg"),
                         SizedBox(height: 20),
                         GasBar(
                             gas: "SO₂", time: "2 minutes ago", weight: "2.8kg"),
-                        SizedBox(height: 600),
                       ],
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            'Your ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25.0),
+                          ),
+                          Text(
+                            'Statistics',
+                            style: TextStyle(
+                                color: appGreen,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Statistics()
                   ],
                 ),
               ),

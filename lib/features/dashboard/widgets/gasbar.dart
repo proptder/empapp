@@ -52,7 +52,7 @@ class _GasBarState extends State<GasBar> {
                       style: TextStyle(
                         color: textGrey,
                         fontSize: 14,
-                        fontWeight: FontWeight.w100,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],

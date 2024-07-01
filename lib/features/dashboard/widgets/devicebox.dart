@@ -4,11 +4,11 @@ class DeviceBox extends StatefulWidget {
   const DeviceBox({super.key});
 
   @override
-  State<DeviceBox> createState() => _DeviceBoxState();
+  State<DeviceBox> createState() => DeviceBoxState();
 }
 
-class _DeviceBoxState extends State<DeviceBox> {
-  bool _isSwitched = false;
+class DeviceBoxState extends State<DeviceBox> {
+  bool _isSwitched = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -80,3 +80,6 @@ class _DeviceBoxState extends State<DeviceBox> {
     );
   }
 }
+
+
+
