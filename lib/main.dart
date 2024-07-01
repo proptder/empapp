@@ -1,4 +1,6 @@
 import 'package:empapp/barrel.dart';
+import 'package:empapp/features/closingscreen/logout.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Dashboard(),
+      home: Logout(),
     );
   }
 }
