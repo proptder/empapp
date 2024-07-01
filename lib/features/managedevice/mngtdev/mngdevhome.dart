@@ -1,13 +1,13 @@
 import 'package:empapp/barrel.dart';
 
-class Notifications extends StatefulWidget {
-  const Notifications({super.key});
+class MngDevHome extends StatefulWidget {
+  const MngDevHome({super.key});
 
   @override
-  State<Notifications> createState() => _NotificationsState();
+  State<MngDevHome> createState() => _MngDevHomeState();
 }
 
-class _NotificationsState extends State<Notifications> {
+class _MngDevHomeState extends State<MngDevHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +47,7 @@ class _NotificationsState extends State<Notifications> {
             const Padding(
               padding:  EdgeInsets.only(left:20.0),
               child: Text(
-                'Notifications',
+                'Devices',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -59,29 +59,42 @@ class _NotificationsState extends State<Notifications> {
               height: 60,
             ),
             Container(
+              width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
               ),
-              child: const SingleChildScrollView(
-                  child: Column(
-                children: [
-                  NotifBar(
-                      heading: 'Device Disconnected',
-                      subheading: 'You have succesfully disconnected from the device',
-                      icon: Icons.mark_chat_read,
-                      btnType: 'danger',
+              child: SingleChildScrollView(
+                  child: Wrap(
+                alignment: WrapAlignment.center, children: [
+                const SizedBox(
+                  width: 300,
+                  height: 20,
+                ),
+                const DeviceBoxSmall(),
+                const DeviceBoxSmall(),
+                const DeviceBoxSmall(),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    width: 170,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20), color: appGrey),
+                    child: IconButton(
+                      icon: const Icon(Icons.add_circle_outlined),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AddDeviceHome()),
+                        );
+                      },
+                    ),
                   ),
-                  NotifBar(
-                      heading: 'Device Connected',
-                      subheading: 'You have succesfully connected to the device',
-                      icon: Icons.check_circle,
-                      btnType: 'success',
-                  ),
-                ]
-                  )
-              ),
+                )
+              ])),
             ),
           ],
         ),

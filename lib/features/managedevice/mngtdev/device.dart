@@ -109,18 +109,8 @@ class _DeviceState extends State<Device> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              'Device',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
             Container(
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
@@ -147,6 +137,7 @@ class _DeviceState extends State<Device> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
+                  const SizedBox(height: 40),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Stack(

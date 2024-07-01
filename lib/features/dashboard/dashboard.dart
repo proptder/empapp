@@ -28,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
       });
     } else if (index == 2) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const SettingsPage()))
+          .push(MaterialPageRoute(builder: (context) => const Notifications()))
           .then((_) {
         setState(() {
           _selectedIndex = 0;
