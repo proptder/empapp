@@ -104,10 +104,10 @@ class _DetailsState extends State<Details> {
               ),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30)),
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20)),
                 color: Colors.white,
               ),
               child: SingleChildScrollView(

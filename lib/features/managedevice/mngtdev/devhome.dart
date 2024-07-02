@@ -12,107 +12,87 @@ class _DevicesHomeState extends State<DevicesHome> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xFF0F0159),
-        body: Column(children: [
-          SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Row(children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const Signup(),
-                      ),
-                    ); // Handle back action
-                  },
-                  child: const Text(
-                    'Back',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(80.0),
+          child: AppBar(
+            iconTheme: const IconThemeData(
+              color: Colors.white, // Set your desired color here
+            ),
+            title: const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                'Emission Pulse',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white),
               ),
-            ]),
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: 60,
-              ),
+            ),
+            backgroundColor: mainCol, // Setting the background color
+            actions: [
               Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Row(
-                  children: [
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text("Devices",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                  ],
+                padding: const EdgeInsets.all(10.0),
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    // navigate to settings page
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SettingsPage()));
+                  },
                 ),
               ),
             ],
           ),
-          SizedBox(
-            height: 80,
-          ),
-          Expanded(
-              child: Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30))),
-            child: Stack(children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+        ),
+        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Text("Devices",
+                style: TextStyle(
                     color: Colors.white,
-                  ),
-                  child: SingleChildScrollView(
-                    child: Center(
-                      child: Wrap(alignment: WrapAlignment.center, children: [
-                        const DeviceBoxSmall(),
-                        const DeviceBoxSmall(),
-                        const DeviceBoxSmall(),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Container(
-                            width: 170,
-                            height: 120,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: appGrey),
-                            child: IconButton(
-                              icon: const Icon(Icons.add_circle_outlined),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const AddDeviceHome()),
-                                );
-                              },
-                            ),
-                          ),
-                        )
-                      ]),
-                    ),
-                  ),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold)),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          SingleChildScrollView(
+            child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
                 ),
-              )
-            ]),
-          ))
+                child: Wrap(alignment: WrapAlignment.center, children: [
+                  const DeviceBoxSmall(),
+                  const DeviceBoxSmall(),
+                  const DeviceBoxSmall(),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                      width: 170,
+                      height: 120,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: appGrey),
+                      child: IconButton(
+                        icon: const Icon(Icons.add_circle_outlined),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AddDeviceHome()),
+                          );
+                        },
+                      ),
+                    ),
+                  )
+                ])),
+          ),
         ]));
   }
 }

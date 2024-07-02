@@ -38,3 +38,5 @@ export 'package:empapp/features/notifications/notifbar.dart';
 export 'package:empapp/features/settings/settings.dart';
 
 export 'package:empapp/features/closingscreen/logout.dart';
+
+export 'package:empapp/features/managedevice/mngtdev/devhome.dart';

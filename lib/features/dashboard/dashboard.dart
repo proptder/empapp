@@ -1,6 +1,4 @@
 import 'package:empapp/barrel.dart';
-import 'package:empapp/features/managedevice/mngtdev/devhome.dart';
-import 'package:empapp/features/settings/settings.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -77,45 +75,54 @@ class _DashboardState extends State<Dashboard> {
 
     return Scaffold(
       backgroundColor: const Color(0xFF0F0159),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80.0),
+        child: AppBar(
+          iconTheme: const IconThemeData(
+            color: Colors.white, // Set your desired color here
+          ),
+          title: const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Emission Pulse',
+              style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white),
+            ),
+          ),
+          backgroundColor: mainCol, // Setting the background color
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  // navigate to settings page
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsPage()));
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 70,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Row(
-                children: [
-                  Text(
-                    "Emp App",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    width: 250,
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.settings,
-                        color: Colors.white,
-                      ))
-                ],
-              ),
-            ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30)),
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
                   color: Colors.white,
                 ),
                 child: Column(
