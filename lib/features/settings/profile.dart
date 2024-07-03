@@ -6,72 +6,65 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          iconTheme: const IconThemeData(
+            color: Colors.white, // Set your desired color here
+          ),
+          title: const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Emission Pulse',
+              style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white),
+            ),
+          ),
+          backgroundColor: mainCol, // Setting the background color
+        ),
         backgroundColor: const Color(0xFF0F0159),
         body: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Row(children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const Signup(),
-                      ),
-                    ); // Handle back action
-                  },
-                  child: const Text(
-                    'Back',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ),
-              ),
-            ]),
-          ),
-          SizedBox(
-            height: 60,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 35.0),
             child: Row(
               children: [
                 Image.asset(
-                  "assets/icons/user.png",
-                  fit: BoxFit.cover,
+                  "assets/img/usericon.png",
+                  width: 90,
+                  height: 90,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                Column(
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "Grace Spice",
+                      "The User",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
                     ),
-                    Text("Gracespice@gmail.com",
+                    Text("theuser@gmail.com",
                         style: TextStyle(color: Colors.white)),
-                    Text("Nairobi Kenya",
+                    Text("User City",
                         style: TextStyle(color: Colors.white)),
                   ],
                 )
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Expanded(
               child: Container(
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
@@ -80,26 +73,26 @@ class Profile extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: ListView(
-                        padding: EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(16.0),
                         children: [
                           ListTile(
-                            leading: Icon(Icons.edit),
-                            title: Text(
+                            leading: const Icon(Icons.edit),
+                            title: const Text(
                               'Edit Profile',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
                               // Handle notifications settings
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           SwitchListTile(
-                            secondary: Icon(Icons.notifications_on),
-                            title: Text(
+                            secondary: const Icon(Icons.notifications_on),
+                            title: const Text(
                               'Push Notifications',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             value:
                                 false, // Replace with the current value from your app's state
@@ -107,82 +100,84 @@ class Profile extends StatelessWidget {
                               // Handle dark mode toggle
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           ListTile(
-                            leading: Icon(Icons.star_border),
-                            title: Text(
+                            leading: const Icon(Icons.star_border),
+                            title: const Text(
                               'Archievments',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
                               // Handle app rating
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           ListTile(
-                            leading: Icon(Icons.cyclone_rounded),
-                            title: Text(
+                            leading: const Icon(Icons.cyclone_rounded),
+                            title: const Text(
                               'App Usage',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
                               // Handle app sharing
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           ListTile(
-                            leading: Icon(Icons.lock_outline),
-                            title: Text(
+                            leading: const Icon(Icons.lock_outline),
+                            title: const Text(
                               'Change Password',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
                               // Handle privacy policy
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           ListTile(
-                            leading: Icon(Icons.description_outlined),
-                            title: Text(
+                            leading: const Icon(Icons.description_outlined),
+                            title: const Text(
                               'FeedBack',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
                               // Handle terms and conditions
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           ListTile(
-                            leading: Icon(Icons.delete),
-                            title: Text(
+                            leading: const Icon(Icons.delete),
+                            title: const Text(
                               'Delete Account',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
                               // Handle cookies policy
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           ListTile(
-                            leading: Icon(Icons.logout_outlined),
-                            title: Text(
+                            leading: const Icon(Icons.logout_outlined),
+                            title: const Text(
                               'log Out',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.normal),
                             ),
                             onTap: () {
-                              // Handle contact
+                              // Navigate to logout screen
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const Logout()));
                             },
                           ),
                         ],

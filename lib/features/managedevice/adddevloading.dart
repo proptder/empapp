@@ -114,8 +114,8 @@ class _LoadScreenState extends State<LoadScreen> {
               valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 112, 224, 0)),
             ),
             const SizedBox(height: 20),
-            Image.asset('assets/icons/nfc.png', width: 100),
-            const SizedBox(height: 10),
+            Image.asset('assets/icons/nfc.png'),
+            const SizedBox(height: 20),
             const Text(
               'Connecting via NFC',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

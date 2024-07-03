@@ -64,14 +64,14 @@ class HostMachine extends StatelessWidget {
             height: 20,
           ),
           const Text("     Select Machine"),
-          const SizedBox(height: 20),
+          const SizedBox(height: 0),
           Center(
             child: GestureDetector(
               onTap: () {
                 // Handle log in navigation
               },
               child: Container(
-                width: 320.0,
+                width: 280,
                 height: 51,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -79,8 +79,8 @@ class HostMachine extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.3),
-                        spreadRadius: 5,
-                        blurRadius: 7,
+                        spreadRadius: 1,
+                        blurRadius: 3,
                         offset: const Offset(0, 3),
                       )
                     ]),
@@ -90,7 +90,7 @@ class HostMachine extends StatelessWidget {
                       padding: EdgeInsets.all(12.0),
                       child: Text(
                         'Select from list',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        style: TextStyle(fontSize: 12),
                       ),
                     ),
                     Padding(
@@ -104,14 +104,14 @@ class HostMachine extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           const Text("     Select type"),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Center(
             child: GestureDetector(
               onTap: () {
                 // Handle log in navigation
               },
               child: Container(
-                width: 320.0,
+                width: 280,
                 height: 51,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -119,8 +119,8 @@ class HostMachine extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.3),
-                        spreadRadius: 5,
-                        blurRadius: 7,
+                        spreadRadius: 1,
+                        blurRadius: 3,
                         offset: const Offset(0, 3),
                       )
                     ]),
@@ -130,7 +130,7 @@ class HostMachine extends StatelessWidget {
                       padding: EdgeInsets.all(12.0),
                       child: Text(
                         'Select from list',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        style: TextStyle(fontSize: 12),
                       ),
                     ),
                     Padding(

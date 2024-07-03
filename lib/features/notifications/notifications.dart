@@ -32,7 +32,11 @@ class _NotificationsState extends State<Notifications> {
                 Icons.settings,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                  // navigate to settings page
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsPage()));
+                },
             ),
           ],
         ),
@@ -42,7 +46,7 @@ class _NotificationsState extends State<Notifications> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             const Padding(
               padding:  EdgeInsets.only(left:20.0),

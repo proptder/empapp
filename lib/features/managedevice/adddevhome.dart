@@ -24,7 +24,7 @@ class AddDeviceHome extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       // go back to the previous page using pop
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Signup()));
+                      Navigator.pop(context);
                     },
                     child: Text(
                       'Back',

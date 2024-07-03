@@ -17,10 +17,9 @@ class RecoverPass extends StatelessWidget {
           height: 30,
         ),
         Row(
+         mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: GestureDetector(
+            GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
@@ -33,13 +32,10 @@ class RecoverPass extends StatelessWidget {
                   style: TextStyle(color: Colors.green, fontSize: 16),
                 ),
               ),
-            ),
-            const Spacer(),
             const Text(
               '     Recover Password',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            const Spacer(flex: 2),
           ],
         ),
         const SizedBox(height: 200),
@@ -59,7 +55,7 @@ class RecoverPass extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 200),
+        const SizedBox(height: 150),
         Center(
           child: GestureDetector(
             onTap: () {
@@ -81,7 +77,7 @@ class RecoverPass extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 200,
+          height: 50,
         ),
         const Center(
           child: Text(

@@ -11,20 +11,29 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     final customWidth = CustomSliderWidths(
-      trackWidth: 10,
-      progressBarWidth: 13,
-      shadowWidth: 20,
+      trackWidth: 8,
+      progressBarWidth: 8,
+      shadowWidth: 1,
     );
 
     final customColors = CustomSliderColors(
-      trackColor: Colors.grey,
-      progressBarColors: [const Color.fromARGB(255, 179, 78, 78), Colors.cyan],
-      shadowColor: Colors.black,
-      shadowMaxOpacity: 0.2,
-      shadowStep: 10,
+      trackColor: Colors.grey[200],
+      progressBarColors: [Colors.green, Colors.red],
+      shadowColor: Colors.white,
+      shadowMaxOpacity: 00,
+      shadowStep: 1,
     );
 
     final info = InfoProperties(
+      modifier: (double value) {
+        final kgValue = value.toStringAsFixed(1);
+        return '$kgValue kg';
+      },
+      mainLabelStyle: const TextStyle(
+        fontSize: 42,
+        fontWeight: FontWeight.bold,
+        color: Colors.green,
+      ),
       topLabelText: 'CO₂',
       topLabelStyle: const TextStyle(
         fontSize: 20,
@@ -33,7 +42,7 @@ class _DetailsState extends State<Details> {
       bottomLabelText: 'Today',
       bottomLabelStyle: const TextStyle(
         fontSize: 20,
-        color: Colors.green,
+        color: Colors.black,
       ),
     );
 
@@ -54,12 +63,15 @@ class _DetailsState extends State<Details> {
           iconTheme: const IconThemeData(
             color: Colors.white, // Set your desired color here
           ),
-          title: const Text(
-            'CO₂ : 0.4 g/km',
-            style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.w300,
-                color: Colors.white),
+          title: const Padding(
+            padding:  EdgeInsets.all(40.0),
+            child:  Text(
+              'CO₂ : 30 kg',
+              style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white),
+            ),
           ),
           backgroundColor: appGreen, // Setting the background color
           actions: [
@@ -68,7 +80,11 @@ class _DetailsState extends State<Details> {
                 Icons.settings,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                  // navigate to settings page
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsPage()));
+                },
             ),
           ],
         ),
@@ -148,7 +164,8 @@ class _DetailsState extends State<Details> {
                             child: Text(
                               'Good Job!',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 20.0),
                             ),
                           ),
                         ],

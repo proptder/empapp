@@ -23,8 +23,8 @@ class _ScanState extends State<Scan> {
 
   @override
   void dispose() {
-    controller?.dispose();
     super.dispose();
+    controller?.dispose();
   }
 
   @override
@@ -94,7 +94,7 @@ class _ScanState extends State<Scan> {
                   onPressed: () {
                     dispose();
                     controller?.pauseCamera();
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const LoadScreen()),

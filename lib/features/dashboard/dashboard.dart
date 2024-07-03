@@ -38,20 +38,29 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final customWidth = CustomSliderWidths(
-      trackWidth: 10,
-      progressBarWidth: 13,
-      shadowWidth: 20,
+      trackWidth: 8,
+      progressBarWidth: 8,
+      shadowWidth: 1,
     );
 
     final customColors = CustomSliderColors(
-      trackColor: Colors.grey,
-      progressBarColors: [const Color.fromARGB(255, 179, 78, 78), Colors.cyan],
-      shadowColor: Colors.black,
-      shadowMaxOpacity: 0.2,
-      shadowStep: 10,
+      trackColor: Colors.grey[200],
+      progressBarColors: [Colors.green, Colors.red],
+      shadowColor: Colors.white,
+      shadowMaxOpacity: 00,
+      shadowStep: 1,
     );
 
     final info = InfoProperties(
+      modifier: (double value) {
+        final kgValue = value.toStringAsFixed(1);
+        return '$kgValue kg';
+      },
+      mainLabelStyle: const TextStyle(
+        fontSize: 42,
+        fontWeight: FontWeight.bold,
+        color: Colors.green,
+      ),
       topLabelText: 'CO₂',
       topLabelStyle: const TextStyle(
         fontSize: 20,
@@ -60,7 +69,7 @@ class _DashboardState extends State<Dashboard> {
       bottomLabelText: 'Today',
       bottomLabelStyle: const TextStyle(
         fontSize: 20,
-        color: Colors.green,
+        color: Colors.black,
       ),
     );
 
@@ -138,20 +147,28 @@ class _DashboardState extends State<Dashboard> {
                             const Text(
                               'Hello ',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 25.0),
+                                  fontWeight: FontWeight.w500, fontSize: 25.0),
                             ),
                             Text(
-                              'Grace',
+                              'User',
                               style: TextStyle(
                                   color: appGreen,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   fontSize: 25.0),
                             ),
                           ],
                         ),
-                        Image.asset(
-                          "assets/icons/user.png",
-                          fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            // navigate to profile page
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const Profile()));
+                          },
+                          child: Image.asset(
+                            "assets/img/usericon.png",
+                            width: 50,
+                            height: 50,
+                          ),
                         ),
                       ],
                     ),
@@ -190,29 +207,26 @@ class _DashboardState extends State<Dashboard> {
                             child: Text(
                               'Good Job!',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 20.0),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 40.0),
-                          child: SmallAppButton(
-                            onPressed: () {
-                              // navigate to login page
-                            },
-                            buttonText: 'View Details',
-                          ),
-                        ),
-                      ],
-                    ),
+                    const SizedBox(height: 20),
+                    SmallAppButtonLight(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Details()),
+                          );
+                        },
+                        buttonText: "View Details"),
                     const Column(
                       children: [
-                        SizedBox(height: 60),
+                        SizedBox(height: 10),
                         GasBar(
                             gas: "CO₂",
                             time: "captured 2 minutes ago",
@@ -281,8 +295,11 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Image.asset(
-                      "assets/img/ad.png",
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Image.asset(
+                        "assets/img/ad.png",
+                      ),
                     ),
                   ],
                 ),

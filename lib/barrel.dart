@@ -36,6 +36,7 @@ export 'package:empapp/features/notifications/notifications.dart';
 export 'package:empapp/features/notifications/notifbar.dart';
 
 export 'package:empapp/features/settings/settings.dart';
+export 'package:empapp/features/settings/profile.dart';
 
 export 'package:empapp/features/closingscreen/logout.dart';
 

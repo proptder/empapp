@@ -1,3 +1,4 @@
+
 import 'package:empapp/barrel.dart';
 
 class DevicesHome extends StatefulWidget {
@@ -54,17 +55,19 @@ class _DevicesHomeState extends State<DevicesHome> {
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
-                    fontWeight: FontWeight.bold)),
+                    fontWeight: FontWeight.normal)),
           ),
           const SizedBox(
             height: 40,
           ),
-          SingleChildScrollView(
+          Expanded(
             child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                height: double.infinity,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
                   color: Colors.white,
                 ),
                 child: Wrap(alignment: WrapAlignment.center, children: [

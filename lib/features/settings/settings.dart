@@ -1,61 +1,59 @@
 import 'package:empapp/barrel.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
   @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Set your desired color here
+        ),
+        title: const Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Text(
+            'Emission Pulse',
+            style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w300,
+                color: Colors.white),
+          ),
+        ),
+        backgroundColor: mainCol, // Setting the background color
+      ),
       backgroundColor: const Color(0xFF0F0159),
       body: Column(children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: Row(children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const Signup(),
-                    ),
-                  ); // Handle back action
-                },
-                child: const Text(
-                  'Back',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-              ),
-            ),
-          ]),
-        ),
-        SizedBox(
-          height: 60,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 25.0),
+        const Padding(
+          padding: EdgeInsets.only(left: 25.0),
           child: Row(
             children: [
               Text(
                 "Settings",
                 style: TextStyle(
                     fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
                     color: Colors.white),
               ),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 50,
         ),
         Expanded(
           child: Container(
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -64,26 +62,29 @@ class SettingsPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: ListView(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   children: [
                     ListTile(
-                      leading: Icon(Icons.notifications_outlined),
-                      title: Text(
+                      leading: const Icon(Icons.notifications_outlined),
+                      title: const Text(
                         'Notifications',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
-                        // Handle notifications settings
+                        // Navigate to notifications screen
+                        Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const Notifications()));
+
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     SwitchListTile(
-                      secondary: Icon(Icons.dark_mode_outlined),
-                      title: Text(
+                      secondary: const Icon(Icons.dark_mode_outlined),
+                      title: const Text(
                         'Dark Mode',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       value:
                           false, // Replace with the current value from your app's state
@@ -91,79 +92,79 @@ class SettingsPage extends StatelessWidget {
                         // Handle dark mode toggle
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.star_border),
-                      title: Text(
+                      leading: const Icon(Icons.star_border),
+                      title: const Text(
                         'Rate App',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
                         // Handle app rating
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.share_outlined),
-                      title: Text(
+                      leading: const Icon(Icons.share_outlined),
+                      title: const Text(
                         'Share App',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
                         // Handle app sharing
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.lock_outline),
-                      title: Text(
+                      leading: const Icon(Icons.lock_outline),
+                      title: const Text(
                         'Privacy Policy',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
                         // Handle privacy policy
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.description_outlined),
-                      title: Text(
+                      leading: const Icon(Icons.description_outlined),
+                      title: const Text(
                         'Terms and Conditions',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
                         // Handle terms and conditions
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.cookie_outlined),
-                      title: Text(
+                      leading: const Icon(Icons.cookie_outlined),
+                      title: const Text(
                         'Cookies Policy',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
                         // Handle cookies policy
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.mail_outline),
-                      title: Text(
+                      leading: const Icon(Icons.mail_outline),
+                      title: const Text(
                         'Contact',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.normal),
                       ),
                       onTap: () {
                         // Handle contact

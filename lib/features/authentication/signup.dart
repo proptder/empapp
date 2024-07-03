@@ -6,12 +6,11 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: 
-            Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
@@ -38,7 +37,8 @@ class Signup extends StatelessWidget {
                     const Spacer(),
                     const Text(
                       '     SignUp',
-                      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                     ),
                     const Spacer(flex: 2),
                   ],
@@ -102,7 +102,7 @@ class Signup extends StatelessWidget {
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 10),
                 Center(
                   child: GestureDetector(
                     onTap: () {
@@ -113,27 +113,30 @@ class Signup extends StatelessWidget {
                       ); // Handle log in navigation
                     },
                     child: Container(
-                      width: 350.0,
+                      width: 280,
                       height: 51,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.3),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        )
-                      ]),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: const Offset(0, 3),
+                            )
+                          ]),
                       child: const Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.all(12.0),
                             child: Text(
                               'Add Device',
-                              style: TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 190),
+                            padding: EdgeInsets.only(left: 150),
                             child: Icon(Icons.add),
                           )
                         ],
@@ -165,7 +168,7 @@ class Signup extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) =>  const Login(),
+                          builder: (context) => const Login(),
                         ),
                       ); // Handle sign up navigation
                     },

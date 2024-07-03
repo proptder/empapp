@@ -1,5 +1,4 @@
 import 'package:empapp/barrel.dart';
-import 'package:empapp/common/colors.dart';
 
 class SmallAppButton extends StatelessWidget {
   final VoidCallback onPressed;

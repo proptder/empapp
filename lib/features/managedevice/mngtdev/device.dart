@@ -113,8 +113,10 @@ class _DeviceState extends State<Device> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
                 color: Colors.white,
               ),
               child: SingleChildScrollView(

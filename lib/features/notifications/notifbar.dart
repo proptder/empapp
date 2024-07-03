@@ -26,7 +26,7 @@ class _NotifBarState extends State<NotifBar> {
       child: SizedBox(
         width: double.infinity,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
              // the nofication icon
@@ -49,8 +49,7 @@ class _NotifBarState extends State<NotifBar> {
                                 ? Colors.blue
                                 : Colors.black,
               ),),
-             SizedBox(
-              width: 260,
+             Expanded(
                child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

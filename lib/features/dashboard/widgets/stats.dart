@@ -23,7 +23,7 @@ class _StatisticsState extends State<Statistics> {
                   color: Colors.black.withOpacity(0.2), // Light black shadow
                   spreadRadius: 1,
                   blurRadius: 5,
-                  offset: Offset(0, 2), // Changes position of shadow
+                  offset: const Offset(0, 2), // Changes position of shadow
                 ),
               ],
             ),
