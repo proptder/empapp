@@ -22,7 +22,7 @@ export 'package:empapp/features/dashboard/widgets/stats.dart';
 export 'package:sleek_circular_slider/sleek_circular_slider.dart';
 export 'package:empapp/features/authentication/login.dart';
 export 'package:empapp/features/managedevice/adddevhome.dart';
-export 'package:empapp/features/authentication/recovery_pge.dart';
+export 'package:empapp/features/authentication/recovery.dart';
 
 export 'package:iconify_flutter/iconify_flutter.dart';
 export 'package:iconify_flutter/icons/cil.dart';
@@ -41,3 +41,7 @@ export 'package:empapp/features/settings/profile.dart';
 export 'package:empapp/features/closingscreen/logout.dart';
 
 export 'package:empapp/features/managedevice/mngtdev/devhome.dart';
+
+export 'package:empapp/features/authentication/verify.dart';
+
+export 'package:empapp/features/authentication/reset.dart';

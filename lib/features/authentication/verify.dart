@@ -1,6 +1,4 @@
-import 'package:empapp/features/authentication/recovery_pge.dart';
-import 'package:empapp/features/authentication/reset.dart';
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class VerifyPge extends StatelessWidget {
   const VerifyPge({super.key});

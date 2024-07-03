@@ -1,8 +1,4 @@
-import 'package:empapp/features/authentication/login.dart';
-import 'package:empapp/features/authentication/signup.dart';
-import 'package:empapp/features/authentication/verify_Pge.dart';
-import 'package:flutter/material.dart';
-
+import 'package:empapp/barrel.dart';
 class RecoverPass extends StatelessWidget {
   const RecoverPass({super.key});
 
