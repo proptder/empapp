@@ -158,17 +158,10 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ],
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            // navigate to profile page
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const Profile()));
-                          },
-                          child: Image.asset(
-                            "assets/img/usericon.png",
-                            width: 50,
-                            height: 50,
-                          ),
+                        Image.asset(
+                          "assets/img/usericon.png",
+                          width: 50,
+                          height: 50,
                         ),
                       ],
                     ),

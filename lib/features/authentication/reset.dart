@@ -1,5 +1,4 @@
-import 'package:empapp/features/authentication/verify_Pge.dart';
-import 'package:flutter/material.dart';
+import 'package:empapp/barrel.dart';
 
 class Reset extends StatelessWidget {
   const Reset({super.key});

@@ -129,12 +129,11 @@ class LogorSign extends StatelessWidget {
                                       ),
                                       TextButton(
                                         onPressed: () {
-                                          Navigator.of(context).pushReplacement(
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const Signup(),
-                                            ),
-                                          );
+                                          Navigator.of(context).push(
+                                                       MaterialPageRoute(
+                                                     builder: (context) => const Signup(),
+                                                         ),
+                                                       );
                                         },
                                         child: const Text(
                                           'Sign Up',
