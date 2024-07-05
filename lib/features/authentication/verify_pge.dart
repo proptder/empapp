@@ -39,7 +39,7 @@ class VerifyPge extends StatelessWidget {
                   '    Recover Password',
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                 ),
-                const Spacer(flex: 2), 
+                const Spacer(flex: 2),
                 ],
               ),
               const SizedBox(height: 200),
