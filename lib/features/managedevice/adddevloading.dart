@@ -1,18 +1,13 @@
-import 'dart:async';
+import 'package:empapp/barrel.dart';
 
-import 'package:empapp/common/widgets/buttons/button.dart';
-import 'package:empapp/features/managedevice/adddevscan.dart';
-import 'package:empapp/features/managedevice/addevhostmachine.dart';
-import 'package:flutter/material.dart';
-
-class SetupScreen extends StatefulWidget {
-  const SetupScreen({super.key});
+class LoadScreen extends StatefulWidget {
+  const LoadScreen({super.key});
 
   @override
-  _SetupScreenState createState() => _SetupScreenState();
+  State<LoadScreen> createState() => _LoadScreenState();
 }
 
-class _SetupScreenState extends State<SetupScreen> {
+class _LoadScreenState extends State<LoadScreen> {
   double progress = 0.01;
 
   @override
@@ -119,8 +114,8 @@ class _SetupScreenState extends State<SetupScreen> {
               valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 112, 224, 0)),
             ),
             const SizedBox(height: 20),
-            const Icon(Icons.nfc_outlined, size: 50),
-            const SizedBox(height: 10),
+            Image.asset('assets/icons/nfc.png'),
+            const SizedBox(height: 20),
             const Text(
               'Connecting via NFC',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
